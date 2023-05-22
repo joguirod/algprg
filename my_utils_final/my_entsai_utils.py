@@ -3,8 +3,10 @@
 def mostrar_texto(conteudo):
     print(conteudo)
 
-def mostrar_texto_inline(conteudo):
-    pass
+
+def mostrar_texto_inline(conteudo): # ChatGPT me ajudou nessa, não sei o que essa função deveria fazer
+    print(conteudo, end=' ')
+
 
 def mostrar_texto_caixa_alta(contexto):
     texto_caixa_alta = para_caixa_alta(contexto)
@@ -43,6 +45,7 @@ def obter_texto_tam_min_max(label, minimo, maximo):
         print(f'O tamanho do exto não está entre o intervalo permitido ({minimo}-{maximo})!')
         texto = obter_texto(label)
     return texto
+
 
 def obter_opcoes(opcoes, label='Escolha uma das opções a seguir:'):
     print(label)
