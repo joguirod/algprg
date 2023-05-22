@@ -9,7 +9,7 @@ def contar_divisores(numero):
     return divisores
 
 
-def mmc(numero1, numero2):
+def calcular_mmc(numero1, numero2):
     resto = None
     valor_1 = numero1
     valor_2 = numero2
@@ -17,11 +17,25 @@ def mmc(numero1, numero2):
     while resto != 0:
         resto = valor_1 % valor_2
         valor_1 = valor_2
-        valor_1 = resto
+        valor_2 = resto
     
     mdc = valor_1
 
     return (numero1*numero2) // mdc
+
+def calcular_mdc(numero1, numero2)
+    resto = None
+    valor_1 = numero1
+    valor_2 = numero2
+
+    while resto != 0:
+        resto = valor_1 % valor_2
+        valor_1 = valor_2
+        valor_2 = resto
+
+    mdc = valor_1
+    
+    return mdc
 
 
 def eh_par(numero):
