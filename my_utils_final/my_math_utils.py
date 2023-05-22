@@ -69,3 +69,18 @@ def raiz_quadrada(numero):
 def raiz_cubica(numero):
     raiz_cubica = raiz(numero, 3)
     return raiz_cubica
+
+# quicksort
+
+def ordenar_simples(lista_valores): # Desnecessário mas é legal
+    if len(lista_valores) < 2:
+        return lista_valores
+    pivo = int(lista_valores[0])
+    menores = []        
+    maiores = []
+    for item in lista_valores[1:]:
+        if int(item) >= pivo:
+            maiores.append(item)
+        else:
+            menores.append(item)
+    return ordenar_simples(menores) + [pivo] + ordenar_simples(maiores)
