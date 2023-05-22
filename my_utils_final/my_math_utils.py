@@ -23,7 +23,7 @@ def calcular_mmc(numero1, numero2):
 
     return (numero1*numero2) // mdc
 
-def calcular_mdc(numero1, numero2)
+def calcular_mdc(numero1, numero2):
     resto = None
     valor_1 = numero1
     valor_2 = numero2
