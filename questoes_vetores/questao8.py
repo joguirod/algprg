@@ -12,7 +12,6 @@ def main():
     mostrar_texto(f'O maior número é {lista_num_posicao[2]} e sua posição é {lista_num_posicao[3]}')
 
 
-
 def encontrar_maior_menor(vetor):
     maior = -float('inf')
     menor = float('inf')
