@@ -1,17 +1,17 @@
 from my_entsai_utils import mostrar_texto
-from my_vetores_utils import novo_vetor
+from my_vetores_utils import novo_vetor, meu_append, filtrar, encontrar_elementos_unicos, verificar_contem
 import random
 
 def gerar_vetor_aleatorio(tamanho):
   vetor = novo_vetor(tamanho)
 
   for i in range(tamanho):
-    vetor[i] = obter_numero_aleatorio()
+    vetor[i] = int(obter_numero_aleatorio())
   
   return vetor
 
-def obter_numero_aleatorio(limite = 100):
-  return random.randint(0, limite)
+def obter_numero_aleatorio(limite_inferior=0, limite_superior = 100):
+  return random.randint(limite_inferior, limite_superior)
 
 def bye():
   tchaus = [
@@ -31,7 +31,57 @@ def obter_posicoes_em_vetor(vetor, valor):
 
   for i in range(len(vetor)):
     if vetor[i] == valor:
-      posicoes.append(i)
+      posicoes = meu_append(posicoes, i)
     
   return posicoes
 
+
+def filtrar_numeros_negativos(colecao):
+  vetor_negativo = filtrar(colecao, lambda x: x < 0)
+  return vetor_negativo
+
+
+def filtrar_numeros_positivos(colecao):
+  vetor_negativo = filtrar(colecao, lambda x: x >= 0)
+  return vetor_negativo
+
+
+def verificar_contem_vetor(vetor_original, vetor_dif):
+  ordem = []
+
+  for item_dif in vetor_dif:
+    for item_orig in vetor_original:
+      if item_dif == item_orig:
+        ordem = meu_append(ordem, item_dif)
+
+  return ordem == vetor_dif
+
+
+def verificar_maior_ou_menor(numero1, numero2):
+  return numero1 >= numero2
+
+
+def eh_positivo(numero):
+  return numero > 0
+
+def eh_negativo(numero):
+  return not eh_positivo(numero)
+
+
+def gerar_grupos_unicos(vetor, numero_n, tamanho):
+  vetor = encontrar_elementos_unicos(vetor)
+  grupos = []
+  contador = 0
+
+  while contador < numero_n:
+    grupo = vetor[:tamanho]
+    grupos = meu_append(grupos, grupo)
+    vetor = vetor[tamanho:]
+    contador += 1
+
+  valores_restantes = len(vetor) % numero_n
+  if valores_restantes > 0:
+    for i in range(valores_restantes):
+      grupos[i] = meu_append(grupos[i], (vetor[-(i + 1)]))
+  
+  return grupos
