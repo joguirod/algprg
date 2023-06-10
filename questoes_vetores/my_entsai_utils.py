@@ -4,7 +4,7 @@ def mostrar_texto(conteudo):
     print(conteudo)
 
 def mostrar_texto_inline(conteudo):
-    pass
+    print(conteudo, end='')
 
 def mostrar_texto_caixa_alta(contexto):
     texto_caixa_alta = para_caixa_alta(contexto)
@@ -181,7 +181,3 @@ def eh_letra_maiuscula(caractere):
 
 def eh_letra_minuscula(caractere):
     return 97 <= ord(caractere) <= 122
-
-
-import sys
-sys.path.append('C:\\Users\\José Guilherme\\Desktop\\ADS1\\my_utils_final')

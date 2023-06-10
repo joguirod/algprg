@@ -8,7 +8,7 @@ def main():
     vetor_b = construir_vetor(tamanho_vetores)
     vetor_c = juntar_vetores(vetor_a, vetor_b)
 
-    mostrar_texto(f'Juntando os dois vetores criados, formamos: {vetor_c}')
+    mostrar_texto(f'Juntando os dois vetores criados, formamos: {vetor_c}.')
 
 
 if __name__ == '__main__':

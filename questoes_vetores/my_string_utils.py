@@ -37,10 +37,6 @@ def juntar_textos(textos: list[str], joinador= ''):
             texto_junto = texto_junto + textos[i]
     return texto_junto
 
-juntos = juntar_textos(['arroz', 'agua', 'feijao'], 'r') 
-print(juntos)         
-
-
 
 def juntar_texto_list_para_string(texto_dividido):
     texto_juntado = ''
